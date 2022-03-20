@@ -5,36 +5,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity(name = "RATING")
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "RATINGS2")
 public class Rating {
 
-
     @Id
-    @Column(name = "user_id")
-    private long userId;
-
-
-    @Id
-    @Column(name = "movie_id")
-    private long movieId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private long ratingId;
 
 
     @Column(name = "rating")
     private double rating;
 
-
     @Column(name = "timestamp")
-    private String timestamp; //przemyśleć
+    private int timestamp;
 
-    public Rating (double rating, String timestamp){
-        this.rating=rating;
-        this.timestamp=timestamp;
-    }
+    @ManyToOne
+    private Movie movie;
+
+    @ManyToOne
+    private User user;
+
 }

@@ -20,11 +20,11 @@ public class Link {
     @Column(name = "movie_id")
     private long movieId;
 
-    @Id
+
     @Column(name = "imbd_id")
     private long imbdId;
 
-    @Id
+
     @Column(name = "tmbd_id")
     private long tmdbId;
 }

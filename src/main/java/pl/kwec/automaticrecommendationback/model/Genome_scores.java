@@ -21,7 +21,7 @@ public class Genome_scores {
     @Column(name = "movie_id")
     private long movieId;
 
-    @Id
+
     @Column(name = "tag_id")
     private long tagId;
 
