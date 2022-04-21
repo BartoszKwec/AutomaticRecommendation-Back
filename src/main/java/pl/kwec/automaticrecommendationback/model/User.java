@@ -1,3 +1,4 @@
+
 package pl.kwec.automaticrecommendationback.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -25,8 +26,8 @@ public class User {
     @Column(name = "LAST_NAME")
     private String lastName;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonIgnore
-    Set<Rating> ratings;
-    
+   // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    //@JsonIgnore
+    //Set<Rating> ratings;
+
 }

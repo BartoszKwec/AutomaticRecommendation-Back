@@ -30,6 +30,5 @@ public class Movie {
 
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
-    @JsonIgnore
     Set<Rating> ratings;
 }

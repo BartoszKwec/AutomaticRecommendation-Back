@@ -1,6 +1,7 @@
 package pl.kwec.automaticrecommendationback.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,9 @@ public class Rating {
     private long ratingId;
 
 
+    @Column(name = "user_id")
+    private long userId;
+
     @Column(name = "rating")
     private double rating;
 
@@ -27,9 +31,10 @@ public class Rating {
     private int timestamp;
 
     @ManyToOne
+    @JsonIgnore
     private Movie movie;
 
-    @ManyToOne
-    private User user;
+    //@ManyToOne
+   // private User user;
 
 }

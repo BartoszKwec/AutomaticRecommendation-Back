@@ -1,3 +1,4 @@
+
 package pl.kwec.automaticrecommendationback.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
