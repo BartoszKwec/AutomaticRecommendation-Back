@@ -28,7 +28,7 @@ public class Movie {
     @Column(name="TAG")
     private String tag;
 
-
+    @JsonIgnore
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
     Set<Rating> ratings;
 }

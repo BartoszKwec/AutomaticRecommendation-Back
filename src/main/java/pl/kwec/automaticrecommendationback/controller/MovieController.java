@@ -5,9 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.kwec.automaticrecommendationback.model.Movie;
 import pl.kwec.automaticrecommendationback.repository.MovieRepository;
 
@@ -35,6 +33,13 @@ public class MovieController {
     @Cacheable("test")
     public List<Movie> getMovies() {
 
+
+        return movieRepository.findAll();
+    }
+    @GetMapping("/{ratingId}")
+    public List<Movie> getAllByMovie(
+            @PathVariable(name = "ratingId") Long ratingId
+    ) {
 
         return movieRepository.findAll();
     }
